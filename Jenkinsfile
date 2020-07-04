@@ -33,7 +33,7 @@ pipeline {
             }
           }
           sh """
-           kubectl delete pod -n qa jesus-rabbitmq-test
+           kubectl delete pod -n qa jesus-demo-test-connection
           """
         }
       }
@@ -60,7 +60,7 @@ pipeline {
             }
           }
           sh """
-           kubectl delete pod -n prod jesus-rabbitmq-test
+           kubectl delete pod -n prod jesus-demo-test-connection
           """
         }
       }
