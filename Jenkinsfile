@@ -21,7 +21,7 @@ pipeline {
       steps{
         dir(WORKINGDIR) {
           sh """
-          helm upgrade jesus chart/ --set persistence.enabled=false --debug --wait --install --namespace qa
+          helm upgrade jesus demo/ --set persistence.enabled=false --debug --wait --install --namespace qa
           """
           script {
             rc = sh(script: "helm test jesus --logs --namespace qa", returnStatus: true)
@@ -48,7 +48,7 @@ pipeline {
       steps{
         dir(WORKINGDIR) {
           sh """
-          helm upgrade jesus chart/ --set persistence.enabled=false --debug --wait --install --namespace prod
+          helm upgrade jesus demo/ --set persistence.enabled=false --debug --wait --install --namespace prod
           """
           script {
             rc = sh(script: "helm test jesus --logs --namespace prod", returnStatus: true)
