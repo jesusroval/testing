@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    WORKINGDIR = "infrastructure/backend/rabbitmq"
+    WORKINGDIR = "./"
   }
   stages {
     stage('Configure Kubernetes Access') {
